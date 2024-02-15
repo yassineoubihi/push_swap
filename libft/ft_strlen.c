@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 12:54:33 by youbihi           #+#    #+#             */
-/*   Updated: 2024/02/15 02:36:03 by youbihi          ###   ########.fr       */
+/*   Created: 2023/11/18 14:14:31 by youbihi           #+#    #+#             */
+/*   Updated: 2024/02/09 08:59:52 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-
-int	main(int argc, char **argv)
+size_t	ft_strlen(const char *s)
 {
-	t_data	*stack_a;
+	size_t	i;
 
-	if (argc >= 2)
-	{
-		stack_a = NULL;
-		parsing_data(argv, argc, &stack_a);
-		// sa(stack_a);
-	}
-	else
-		ft_printf("Error\n");
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }

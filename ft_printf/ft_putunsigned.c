@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putunsigned.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 12:54:33 by youbihi           #+#    #+#             */
-/*   Updated: 2024/02/15 02:36:03 by youbihi          ###   ########.fr       */
+/*   Created: 2023/11/18 10:47:12 by youbihi           #+#    #+#             */
+/*   Updated: 2024/02/09 08:59:50 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-
-int	main(int argc, char **argv)
+void	ft_putunsigned(unsigned int n, int *b)
 {
-	t_data	*stack_a;
-
-	if (argc >= 2)
-	{
-		stack_a = NULL;
-		parsing_data(argv, argc, &stack_a);
-		// sa(stack_a);
-	}
+	if (n < 10)
+		ft_putchar_c(n + '0', b);
 	else
-		ft_printf("Error\n");
+	{
+		ft_putunsigned(n / 10, b);
+		ft_putunsigned(n % 10, b);
+	}
 }

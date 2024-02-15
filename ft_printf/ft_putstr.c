@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 12:54:33 by youbihi           #+#    #+#             */
-/*   Updated: 2024/02/15 02:36:03 by youbihi          ###   ########.fr       */
+/*   Created: 2023/11/05 17:16:34 by youbihi           #+#    #+#             */
+/*   Updated: 2024/02/09 08:59:47 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-
-int	main(int argc, char **argv)
+void	ft_putstr(char *s, int *b)
 {
-	t_data	*stack_a;
+	int	i;
 
-	if (argc >= 2)
+	i = 0;
+	if (!s)
 	{
-		stack_a = NULL;
-		parsing_data(argv, argc, &stack_a);
-		// sa(stack_a);
+		write (1, "(null)", 6);
+		(*b) += 6;
 	}
 	else
-		ft_printf("Error\n");
+	{
+		while (s[i])
+		{
+			write (1, &s[i], 1);
+			i++;
+			(*b)++;
+		}
+	}
 }

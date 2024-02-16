@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 10:24:45 by youbihi           #+#    #+#             */
-/*   Updated: 2024/02/16 00:49:54 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/02/16 10:22:59 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	sa(t_data	**stack_a)
 		temp = (*stack_a)->num;
 		(*stack_a)->num = ((*stack_a)->next)->num;
 		((*stack_a)->next)->num = temp;
+		ft_printf("sa\n");
 	}
 }
 
@@ -35,6 +36,7 @@ void	sb(t_data	**stack_b)
 		temp = (*stack_b)->num;
 		(*stack_b)->num = ((*stack_b)->next)->num;
 		((*stack_b)->next)->num = temp;
+		ft_printf("sb\n");
 	}
 }
 
@@ -43,6 +45,7 @@ void	ss(t_data	**stack_a, t_data	**stack_b)
 {
 	sa(stack_a);
 	sb(stack_b);
+	ft_printf("ss\n");
 }
 
 /*pa : Take the first element at the top of b and put it at the top of a. Do nothing if b is empty*/
@@ -56,6 +59,7 @@ void	pa(t_data	**stack_a, t_data	**stack_b)
 		*stack_b = (*stack_b)->next;
 		temp->next = *stack_a;
 		*stack_a = temp;
+		ft_printf("pa\n");
 	}
 }
 
@@ -70,5 +74,6 @@ void	pb(t_data	**stack_a, t_data	**stack_b)
 		*stack_a = (*stack_a)->next;
 		temp->next = *stack_b;
 		*stack_b = temp;
+		ft_printf("pb\n");
 	}
 }

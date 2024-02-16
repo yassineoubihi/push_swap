@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 00:46:16 by youbihi           #+#    #+#             */
-/*   Updated: 2024/02/16 00:50:18 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/02/16 10:24:10 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	ra(t_data	**stack_a)
 		last = last->next;
 	last->next = temp;
 	temp->next = NULL;
+	ft_printf("ra\n");
 }
 
 /*rb : Shift up all elements of stack b by 1.The first element becomes the last one */
@@ -40,6 +41,7 @@ void	rb(t_data	**stack_b)
 		last = last->next;
 	last->next = temp;
 	temp->next = NULL;
+	ft_printf("rb");
 }
 
 /*rr : ra and rb at the same time */
@@ -47,6 +49,7 @@ void	rr(t_data	**stack_a, t_data	**stack_b)
 {
 	ra(stack_a);
 	rb(stack_b);
+	ft_printf("rr\n");
 }
 
 /*rra : Shift down all elements of stack a by 1. The last element becomes the first one.*/
@@ -67,6 +70,7 @@ void	rra(t_data	**stack_a)
 		second_last->next = NULL;
 		temp->next = *stack_a;
 		*stack_a = temp;
+		ft_printf("rra\n");
 	}
 }
 
@@ -88,5 +92,6 @@ void	rrb(t_data	**stack_b)
 		second_last->next = NULL;
 		temp->next = *stack_b;
 		*stack_b = temp;
+		ft_printf("rrb\n");
 	}
 }

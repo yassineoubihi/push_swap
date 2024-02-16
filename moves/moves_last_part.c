@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 00:49:16 by youbihi           #+#    #+#             */
-/*   Updated: 2024/02/16 00:50:14 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/02/16 10:24:23 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,4 +17,5 @@ void	rrr(t_data	**stack_a, t_data	**stack_b)
 {
 	rra(stack_a);
 	rrb(stack_b);
+	ft_printf("rrr\n");
 }

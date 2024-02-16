@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   first_moves.c                                      :+:      :+:    :+:   */
+/*   moves_last_part.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/09 10:24:45 by youbihi           #+#    #+#             */
-/*   Updated: 2024/02/15 02:32:05 by youbihi          ###   ########.fr       */
+/*   Created: 2024/02/16 00:49:16 by youbihi           #+#    #+#             */
+/*   Updated: 2024/02/16 00:50:14 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-/*sa :Swap the first 2 elements at the top of stack a*/
-void	sa(t_data	**stack_a)
+/*rrr : rra and rrb at the same time.*/
+void	rrr(t_data	**stack_a, t_data	**stack_b)
 {
-	if ((*stack_a)->next != NULL)
-	{
-		
-	}
+	rra(stack_a);
+	rrb(stack_b);
 }
-
-void	sb();
-
-void	ss();
-
-void	pa();

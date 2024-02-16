@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 14:57:15 by youbihi           #+#    #+#             */
-/*   Updated: 2024/02/14 20:27:35 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/02/16 01:10:56 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	check_int_max(char **str_split)
 	return (0);
 }
 
-void	fill_data_with_space(char *str, t_data **head)
+void	fill_data_with_space(char *str, t_data **head, int *num)
 {
 	char	**str_split;
 	t_data	*new_node;
@@ -64,6 +64,7 @@ void	fill_data_with_space(char *str, t_data **head)
 	}
 	while (str_split[i] != NULL)
 		i++;
+	*num = i;
 	while (--i >= 0)
 	{
 		new_node = (t_data *)malloc(sizeof(t_data));
@@ -80,10 +81,10 @@ void	fill_data_with_space(char *str, t_data **head)
 	
 }
 
-void	fill_data(char *str, t_data **my_data)
+void	fill_data(char *str, t_data **my_data, int *num)
 {
 	t_data	*cur;
 
-	fill_data_with_space(str, my_data);
+	fill_data_with_space(str, my_data, num);
 	cur = *my_data;
 }

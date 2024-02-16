@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:15:13 by youbihi           #+#    #+#             */
-/*   Updated: 2024/02/14 20:23:10 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/02/16 01:09:47 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void	handel_data(char *str)
 	}
 }
 
-void	parsing_data(char **argv, int argc, t_data	**main_head)
+void	parsing_data(char **argv, int argc, t_data	**main_head, int *num)
 {
 		
 	int		i;
@@ -117,5 +117,5 @@ void	parsing_data(char **argv, int argc, t_data	**main_head)
 		str = ft_strjoin(str, " ");
 		i++;
 	}
-	fill_data(str, main_head);
+	fill_data(str, main_head, num);
 }

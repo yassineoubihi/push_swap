@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:10:35 by youbihi           #+#    #+#             */
-/*   Updated: 2024/02/16 10:19:42 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/02/17 11:58:06 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,6 @@ void	rra(t_data	**stack_a);
 void	rrb(t_data	**stack_b);
 void	rrr(t_data	**stack_a, t_data	**stack_b);
 void	sort_case_one(t_data	**stack_a);
-void	sort_case_two(t_data	**stack_a, t_data	**stack_b);
+void	sort_case_two(t_data	**stack_a, t_data	**stack_b, int list_size);
 
 #endif

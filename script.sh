@@ -1,22 +1,26 @@
 #!/bin/bash
 
-# Get all permutations of the numbers
-permutations=$(echo {1..5} | tr ' ' '\n' | permutations)
+numbers=("1" "2" "3" "4" "5")
 
-# Loop through each permutation
-for permutation in $permutations; do
-  # Separate numbers and build argument string
-  args=($permutation)
-  argument_string="${args[0]}"
-  for ((i=1; i<${#args[@]}; i++)); do
-    argument_string="$argument_string ${args[$i]}"
-  done
+# Function to generate all combinations
+generate_combinations() {
+    local prefix="$1"
+    shift
 
-  # Run pushswap with the current permutation
-  ./pushswap $argument_string &
+    if [ "$#" -eq 0 ]; then
+        echo "$prefix"
+    else
+        for element in "$@"; do
+            generate_combinations "$prefix $element" "${@//$element/}"
+        done
+    fi
+}
 
-  # Wait for pushswap to finish before next iteration
-  wait
+# Get all combinations
+combinations=($(generate_combinations "" "${numbers[@]}"))
+
+# Loop through combinations and pass them to pushswap
+for combination in "${combinations[@]}"; do
+    echo "Running pushswap with combination: $combination"
+    ./pushswap $combination
 done
-
-echo "Finished generating all combinations."

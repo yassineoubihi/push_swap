@@ -1,10 +1,19 @@
-from itertools import permutations
+import itertools
+import subprocess
 
-numbers = [1, 2, 3, 4, 5]
+numbers = ["1", "2", "3", "4", "5"]
 
-# Generate all permutations using itertools.permutations
-combinations = permutations(numbers)
+# Generate all combinations
+combinations = list(itertools.permutations(numbers))
 
-# Print all combinations
-for combo in combinations:
-    print(' '.join(map(str, combo)))
+# Loop through combinations and pass them to pushswap
+for combination in combinations:
+    args = ["./pushswap"] + list(combination)
+    command = " ".join(args)
+
+    print("Running pushswap with combination: {}".format(combination))
+    
+    try:
+        subprocess.call(args)
+    except subprocess.CalledProcessError as e:
+        print("Error running pushswap: {}".format(e))

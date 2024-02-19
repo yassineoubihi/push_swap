@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:10:35 by youbihi           #+#    #+#             */
-/*   Updated: 2024/02/17 11:58:06 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/02/19 13:13:32 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@
 typedef struct	s_data
 {
 	int				num;
+	int				index;
+	int				position;
+	int				stack_size;
 	struct s_data	*next;
 } t_data;
 
@@ -78,7 +81,8 @@ void	rr(t_data	**stack_a, t_data	**stack_b);
 void	rra(t_data	**stack_a);
 void	rrb(t_data	**stack_b);
 void	rrr(t_data	**stack_a, t_data	**stack_b);
-void	sort_case_one(t_data	**stack_a);
-void	sort_case_two(t_data	**stack_a, t_data	**stack_b, int list_size);
+void	sort_3(t_data	**stack_a);
+void	sort_5(t_data	**stack_a, t_data	**stack_b);
+void	stack_size(t_data **head);
 
 #endif

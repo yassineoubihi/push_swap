@@ -4,6 +4,8 @@
 		"stdio.h": "c",
 		"sstream": "c",
 		"algorithm": "c",
-		"ios": "c"
+		"ios": "c",
+		"chrono": "c",
+		"__node_handle": "c"
 	}
 }

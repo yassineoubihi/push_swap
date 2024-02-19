@@ -29,7 +29,7 @@ OBJF = $(SRCF:.c=.o)
 
 # Compiler and flags
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address
 
 # Executable
 PUSH_SWAP = pushswap

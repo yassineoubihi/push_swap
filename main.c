@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 12:54:33 by youbihi           #+#    #+#             */
-/*   Updated: 2024/02/19 16:39:32 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/02/21 15:54:30 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,17 @@ void	check_if_sorted(t_data	**head)
 			return ;
 		temp_head = temp_head->next;
 	}
-	puts("hh");
 	exit(1);
+}
+
+void s()
+{
+	system("leaks pushswap");
 }
 
 int	main(int argc, char **argv)
 {
+	atexit(s);
 	t_data	*stack_a;
 	t_data	*stack_b;
 	int		list_size;
@@ -39,15 +44,13 @@ int	main(int argc, char **argv)
 		stack_a = NULL;
 		parsing_data(argv, argc, &stack_a, &list_size);
 		check_if_sorted(&stack_a);
-		if (list_size == 3)
+		if (list_size == 2)
+			sort_2(&stack_a);
+		else if (list_size == 3)
 			sort_3(&stack_a);
 		else if (list_size == 5 || list_size == 4)
 			sort_four_and_five(&stack_a, &stack_b, list_size);
-		while (stack_a != NULL)
-		{
-			printf("%d\n", stack_a->num);
-			stack_a = stack_a->next;
-		}
+		
 	}
 	else
 		ft_printf("Error\n");

@@ -22,7 +22,8 @@ SRCF = main.c \
 		moves/moves_part_one.c \
 		moves/moves_part_two.c \
 		moves/moves_last_part.c \
-		sorting/sorting_case_one.c
+		sorting/sorting_case_one.c \
+		sorting/main_algo.c
 
 # Object files
 OBJF = $(SRCF:.c=.o)

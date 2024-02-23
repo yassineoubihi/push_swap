@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:10:35 by youbihi           #+#    #+#             */
-/*   Updated: 2024/02/19 16:36:32 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/02/21 15:55:31 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,10 @@ void	rr(t_data	**stack_a, t_data	**stack_b);
 void	rra(t_data	**stack_a);
 void	rrb(t_data	**stack_b);
 void	rrr(t_data	**stack_a, t_data	**stack_b);
+void	sort_2(t_data	**stack_a);
 void	sort_3(t_data	**stack_a);
 void	sort_four_and_five(t_data	**stack_a, t_data	**stack_b, int c);
-void	stack_size(t_data **head);
+int		stack_size(t_data	**stack);
+void	main_algo(t_data	**stack_a, t_data	**stack_b);
 
 #endif

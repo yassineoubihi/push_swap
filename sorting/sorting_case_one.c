@@ -6,11 +6,16 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 00:41:22 by youbihi           #+#    #+#             */
-/*   Updated: 2024/02/19 16:37:43 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/02/20 10:41:37 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+void	sort_2(t_data	**stack_a)
+{
+	sa(stack_a);
+}
 
 void	sort_3(t_data	**stack_a)
 {
@@ -112,7 +117,8 @@ void	sort_4(t_data	**stack_a, t_data	**stack_b)
 		}
 		head_a = head_a->next;
 	}
-	sort_rest(stack_a, stack_b);
+	sort_3(stack_a);
+	pa(stack_a, stack_b);
 }
 
 void	sort_5(t_data	**stack_a, t_data	**stack_b)

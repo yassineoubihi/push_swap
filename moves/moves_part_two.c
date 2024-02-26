@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 00:46:16 by youbihi           #+#    #+#             */
-/*   Updated: 2024/02/19 16:23:11 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/02/26 16:49:52 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	rb(t_data	**stack_b)
 		last = last->next;
 	last->next = temp;
 	temp->next = NULL;
-	ft_printf("rb");
+	ft_printf("rb\n");
 }
 
 /*rr : ra and rb at the same time */

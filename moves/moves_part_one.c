@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 10:24:45 by youbihi           #+#    #+#             */
-/*   Updated: 2024/02/19 16:22:55 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/02/26 16:41:05 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,12 +68,9 @@ void	pb(t_data	**stack_a, t_data	**stack_b)
 {
 	t_data	*temp;
 
-	if (*stack_b != NULL)
-	{
-		temp = *stack_a;
-		*stack_a = (*stack_a)->next;
-		temp->next = *stack_b;
-		*stack_b = temp;
-		ft_printf("pb\n");
-	}
+	temp = *stack_a;
+	*stack_a = (*stack_a)->next;
+	temp->next = *stack_b;
+	*stack_b = temp;
+	ft_printf("pb\n");
 }

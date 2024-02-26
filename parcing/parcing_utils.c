@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 14:57:15 by youbihi           #+#    #+#             */
-/*   Updated: 2024/02/19 13:12:48 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/02/26 15:45:44 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,7 +144,7 @@ void	fill_data_with_space(char *str, t_data **head, int *num)
 	
 }
 
-void	stack_size(t_data **head)
+void	stack_size_count(t_data **head)
 {
 	t_data	*temp;
 	int		i;
@@ -176,7 +176,7 @@ void	fill_data(char *str, t_data **my_data, int *num)
 	cur = *my_data;
 	set_position(&cur);
 	cur = *my_data;
-	stack_size(&cur);
+	stack_size_count(&cur);
 	// while (cur != NULL)
 	// {
 	// 	printf("num = %d ==> index = %d\n",cur->num,cur->index);

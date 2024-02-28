@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 15:58:17 by youbihi           #+#    #+#             */
-/*   Updated: 2024/02/26 16:48:04 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/02/27 12:39:41 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,7 @@ void	algo_step_1(t_data	**stack_a, t_data	**stack_b)
 	int	lspv;
 	int	pv1;
 	int	pv2;
-	int i;
 
-	i = 0;
 	lspv = -1;
 	pv1 = stack_size(stack_a) / 3;
 	pv2 = stack_size(stack_a) / 6;
@@ -70,8 +68,7 @@ void	algo_step_1(t_data	**stack_a, t_data	**stack_b)
 			pb(stack_a, stack_b);
 			if (stack_size(stack_b) > 1 &&
 				(*stack_b)->index >= lspv && (*stack_b)->index <= pv2)
-					rb(stack_b);
-				
+					rb(stack_b);	
 		}
 		else
 			ra(stack_a);
@@ -108,5 +105,24 @@ void	algo_step_2(t_data	**stack_a, t_data	**stack_b)
 void	main_algo(t_data	**stack_a, t_data	**stack_b)
 {
 	algo_step_1(stack_a, stack_b);
+	t_data	*temp;
+	t_data	*temp2;
+
+	temp = *stack_a;
+	temp2 = *stack_b;
+	printf("\n\n==========================\n\n");
+	printf("\nstack a :\n");
+	while (temp != NULL)
+	{
+		printf("%d\n",temp->index);
+		temp = temp->next;
+	}
+	printf("\nstack b :\n");
+	while (temp2 != NULL)
+	{
+		printf("%d\n",temp2->index);
+		temp2 = temp2->next;
+	}
+	printf("\n\n==========================\n\n");
 	algo_step_2(stack_a, stack_b);
 }

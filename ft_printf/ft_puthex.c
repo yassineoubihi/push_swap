@@ -26,9 +26,7 @@ static void	ft_putnbr_hex(unsigned long int nb, int *b, char *str)
 void	ft_puthex(unsigned int str, int *b)
 {
 	unsigned long int	add;
-	long int			add2;
 
 	add = (unsigned long int)str;
-	add2 = (long int)str;
 	ft_putnbr_hex(add, b, "0123456789abcdef");
 }

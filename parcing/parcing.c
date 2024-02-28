@@ -74,9 +74,6 @@ int	check_no_slpit(char *str)
 
 int	check_arg(char *str)
 {
-	int	i;
-
-	i = 0;
 	if (ft_strsearch(str, ' ') == 1)
 		return(check_split(str));
 	else

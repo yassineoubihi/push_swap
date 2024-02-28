@@ -18,13 +18,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		i;
 	int		b;
 	char	*new;
-	int		c;
 
 	if (!s1 || !s2)
 		return (NULL);
 	i = ft_strlen(s1);
 	b = ft_strlen(s2);
-	c = 0;
 	new = (char *)malloc(b + i + 1);
 	if (new == NULL)
 		return (NULL);

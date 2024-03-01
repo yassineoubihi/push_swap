@@ -99,34 +99,30 @@ int	get_position(int index, t_data	**stack_b)
 
 void	algo_step_2(t_data	**stack_a, t_data	**stack_b)
 {
-	int			positon;
+	int	biggest_value;
+	int	button_value;
 
 	sort_3(stack_a);
-	while (stack_size(stack_b) != 0)
+	button_value = get_button_value(stack_a);
+	biggest_value = get_button_value(stack_a);
+	while (stack_size(stack_b))
 	{
-		positon = get_position((*stack_a)->index - 1, stack_b);
-		if (positon == 1)
+		if (button_value < (*stack_b)->index || button_value == biggest_value)
+		{
+			pa(stack_a, stack_b);
+			ra(stack_a);
+			button_value = get_button_value(stack_a);
+		}
+		else
 		{
 			while ((*stack_b)->index != (*stack_a)->index - 1)
 				rb(stack_b);
-			pa(stack_a, stack_b);
-		}
-		else 
-		{
-			while ((*stack_b)->index != (*stack_a)->index - 1)
-				rrb(stack_b);
-			pa(stack_a, stack_b);
 		}
 	}
 }
 
 void	main_algo(t_data	**stack_a, t_data	**stack_b)
 {
-	t_data	*temp;
-	t_data	*temp2;
-
-	temp = *stack_a;
-	temp2 = *stack_b;
 	algo_step_1(stack_a, stack_b);
 	algo_step_2(stack_a, stack_b);
 }

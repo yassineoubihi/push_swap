@@ -15,27 +15,33 @@
 /*sa :Swap the first 2 elements at the top of stack a*/
 void	sa(t_data	**stack_a)
 {
-	int	temp;
+	t_data *first;
+	t_data *second;
 
-	if ((*stack_a)->next != NULL)
+    if (*stack_a != NULL && (*stack_a)->next != NULL)
 	{
-		temp = (*stack_a)->num;
-		(*stack_a)->num = ((*stack_a)->next)->num;
-		((*stack_a)->next)->num = temp;
+		first = *stack_a;
+		second = (*stack_a)->next;
+		first->next = second->next;
+		second->next = first;
+		*stack_a = second;
 		ft_printf("sa\n");
-	}
+    }
 }
 
 /*sb : Swap the first 2 elements at the top of stack b.*/
 void	sb(t_data	**stack_b)
 {
-	int	temp;
+	t_data *first;
+	t_data *second;
 
-	if ((*stack_b)->next != NULL)
+	if (*stack_b != NULL && (*stack_b)->next != NULL)
 	{
-		temp = (*stack_b)->num;
-		(*stack_b)->num = ((*stack_b)->next)->num;
-		((*stack_b)->next)->num = temp;
+		first = *stack_b;
+		second = (*stack_b)->next;
+		first->next = second->next;
+		second->next = first;
+		*stack_b = second;
 		ft_printf("sb\n");
 	}
 }

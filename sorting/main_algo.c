@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 15:58:17 by youbihi           #+#    #+#             */
-/*   Updated: 2024/02/27 12:39:41 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/02/28 20:05:05 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,48 +81,52 @@ void	algo_step_1(t_data	**stack_a, t_data	**stack_b)
 	}
 }
 
+int	get_position(int index, t_data	**stack_b)
+{
+	t_data	*temp;
+	int		i;
+	
+	i = 0;
+	temp = *stack_b;
+	while(i <= stack_size(stack_b) / 2)
+	{
+		if (index == temp->index)
+			return (1);
+		temp = temp->next;
+	}
+	return (0);
+}
+
 void	algo_step_2(t_data	**stack_a, t_data	**stack_b)
 {
+	int			positon;
+
 	sort_3(stack_a);
-	while (stack_size(stack_b) > 0)
+	while (stack_size(stack_b) != 0)
 	{
-		if (((*stack_a)->index - 1) == (*stack_b)->index)
+		positon = get_position((*stack_a)->index - 1, stack_b);
+		if (positon == 1)
+		{
+			while ((*stack_b)->index != (*stack_a)->index - 1)
+				rb(stack_b);
 			pa(stack_a, stack_b);
-		else
-			rb(stack_b);
-	}
-
-	t_data *temp;
-
-	temp = *stack_a;
-	while (temp != NULL)
-	{
-		printf("num = %d\n",temp->num);
-		temp = temp->next;
+		}
+		else 
+		{
+			while ((*stack_b)->index != (*stack_a)->index - 1)
+				rrb(stack_b);
+			pa(stack_a, stack_b);
+		}
 	}
 }
 
 void	main_algo(t_data	**stack_a, t_data	**stack_b)
 {
-	algo_step_1(stack_a, stack_b);
 	t_data	*temp;
 	t_data	*temp2;
 
 	temp = *stack_a;
 	temp2 = *stack_b;
-	printf("\n\n==========================\n\n");
-	printf("\nstack a :\n");
-	while (temp != NULL)
-	{
-		printf("%d\n",temp->index);
-		temp = temp->next;
-	}
-	printf("\nstack b :\n");
-	while (temp2 != NULL)
-	{
-		printf("%d\n",temp2->index);
-		temp2 = temp2->next;
-	}
-	printf("\n\n==========================\n\n");
+	algo_step_1(stack_a, stack_b);
 	algo_step_2(stack_a, stack_b);
 }

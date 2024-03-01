@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 14:57:15 by youbihi           #+#    #+#             */
-/*   Updated: 2024/02/26 15:45:44 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/02/28 19:34:08 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,27 +17,6 @@ void	exit_erro()
 	ft_printf("Error\n");
 	exit(1);
 }
-
-// void	check_numbers(t_data **head)
-// {
-// 	t_data	*sec_head;
-// 	t_data	*sec_head_loop;
-
-// 	sec_head = *head;
-// 	sec_head_loop = *head;
-// 	while (sec_head_loop != NULL)
-// 	{
-// 		while (sec_head != NULL)
-// 		{
-// 			puts("hh");
-// 			if ((*head)->num == sec_head->next->num)
-// 				exit_erro();
-// 			sec_head = sec_head->next;
-// 		}
-// 		sec_head = *head;
-// 		sec_head_loop = sec_head_loop->next;
-// 	}
-// }
 
 void	set_position(t_data **head)
 {

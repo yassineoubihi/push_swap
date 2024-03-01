@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:10:35 by youbihi           #+#    #+#             */
-/*   Updated: 2024/02/21 15:55:31 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/02/28 18:16:54 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,15 @@ typedef struct	s_data
 	int				stack_size;
 	struct s_data	*next;
 } t_data;
+
+typedef struct algo_step_2_s
+{
+	int	position;
+	int	place;
+	int	last_index;
+	int	index;
+} step2_data;
+
 
 typedef struct	s_data_index
 {

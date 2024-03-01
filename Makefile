@@ -33,7 +33,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 # Executable
-PUSH_SWAP = pushswap
+PUSH_SWAP = push_swap
 
 # Targets
 all: $(PUSH_SWAP)

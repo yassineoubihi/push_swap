@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 15:58:17 by youbihi           #+#    #+#             */
-/*   Updated: 2024/02/28 20:05:05 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/03/08 03:15:42 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,27 +102,66 @@ void	algo_step_2(t_data	**stack_a, t_data	**stack_b)
 	int	biggest_value;
 	int	button_value;
 
-	sort_3(stack_a);
-	button_value = get_button_value(stack_a);
 	biggest_value = get_button_value(stack_a);
-	while (stack_size(stack_b))
+	button_value = get_button_value(stack_a);
+// while ((*stackb) && (*stackb)->index + 1 != (*stacka)->index)
+	while (*stack_b)
 	{
-		if (button_value < (*stack_b)->index || button_value == biggest_value)
+		while ((*stack_b) && (*stack_b)->index + 1 != (*stack_a)->index)
 		{
-			pa(stack_a, stack_b);
-			ra(stack_a);
-			button_value = get_button_value(stack_a);
+			if (get_position((*stack_a)->index - 1 , stack_b) == 1)
+			{
+				if ((button_value < (*stack_b)->index) || button_value == biggest_value)
+				{
+					pa(stack_a, stack_b);
+					ra(stack_a);
+					button_value = get_big_value(stack_a);
+				}
+				else if (stack_b)
+					rrb(stack_b);
+			}
+			else if (get_position((*stack_a)->index - 1 , stack_b) == -1)
+			{
+				if ((button_value < (*stack_b)->index) || button_value == biggest_value)
+				{
+					pa(stack_a, stack_b);
+					ra(stack_a);
+					button_value = get_big_value(stack_a);
+				}
+				else if (stack_b)
+					rb(stack_b);
+			}
 		}
-		else
+		while (*stack_b && (*stack_b)->index == (*stack_a)->index - 1)
+			pa(stack_a, stack_b);
+		if ((*stack_a)->index - 1 == button_value)
 		{
-			while ((*stack_b)->index != (*stack_a)->index - 1)
-				rb(stack_b);
+			while (button_value == (*stack_a)->index - 1)
+			{
+				rra(stack_a);
+				button_value = get_big_value(stack_a);
+			}
 		}
 	}
 }
 
+/*
+while (*stackb && (*stackb)->index == (*stacka)->index - 1)
+			ft_pa(stacka, stackb, 1);
+		if ((*stacka)->index - 1 == bota->index)
+		{
+			while (bota->index == (*stacka)->index - 1)
+			{
+				ft_rra(stacka, 1);
+				getbottom(stacka, &bota);
+			}
+		}
+*/
+
 void	main_algo(t_data	**stack_a, t_data	**stack_b)
 {
 	algo_step_1(stack_a, stack_b);
+
+	sort_3(stack_a);
 	algo_step_2(stack_a, stack_b);
 }

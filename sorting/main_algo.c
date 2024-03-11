@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 15:58:17 by youbihi           #+#    #+#             */
-/*   Updated: 2024/03/08 03:15:42 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/03/11 16:40:15 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,16 @@ int	stack_size(t_data	**stack)
 
 int	get_big_value(t_data	**stack)
 {
-	int	big;
+	int		big;
+	t_data	*temp;
 
-	big = (*stack)->index;
-	while (*stack != NULL)
+	temp = *stack;
+	big = temp->index;
+	while (temp != NULL)
 	{
-		if ((*stack)->index > big)
-			big = (*stack)->index;
-		(*stack) = (*stack)->next;
+		if (temp->index > big)
+			big = temp->index;
+		temp = temp->next;
 	}
 	return (big);
 }
@@ -110,8 +112,8 @@ int	get_position(int index, t_data	**stack_b)
 	while (temp != NULL && temp->index != index)
 	{
 		i++;
+		temp = temp->next;
 	}
-	printf("the values of i = %d\n\n",i);
 	return (i);
 }
 
@@ -133,39 +135,34 @@ void	algo_step_2(t_data	**stack_a, t_data	**stack_b)
 {
 	int	biggest_value;
 	int	button_value;
-
+	
 	biggest_value = get_button_value(stack_a);
 	button_value = get_button_value(stack_a);
-	puts("--inside--");
 	while (*stack_b)
 	{
-		puts("--here--");
-		puts("kk");
-		while ((*stack_b) && (*stack_b)->index != (*stack_a)->index - 1)
+		while ((*stack_b) != NULL && (*stack_b)->index + 1 != (*stack_a)->index)
 		{
-			printf("stackb index = %d || stacka index = %d\n\n",(*stack_b)->index, (*stack_a)->index - 1);
-			printf("get_position = %d\n\n",get_position((*stack_a)->index - 1 , stack_b));
+
 			if (get_position((*stack_a)->index , stack_b) > stack_size(stack_b) / 2)
 			{
-				puts("hh");
 				if ((button_value < (*stack_b)->index) || button_value == biggest_value)
 				{
 					pa(stack_a, stack_b);
 					ra(stack_a);
-					button_value = get_big_value(stack_a);
+					button_value = get_button_value(stack_a);
 				}
-				else if (stack_b)
+				else if (*stack_b)
 					rrb(stack_b);
 			}
-			else if (get_position((*stack_a)->index , stack_b) < stack_size(stack_b) / 2)
+			else
 			{
 				if ((button_value < (*stack_b)->index) || button_value == biggest_value)
 				{
 					pa(stack_a, stack_b);
 					ra(stack_a);
-					button_value = get_big_value(stack_a);
+					button_value = get_button_value(stack_a);
 				}
-				else if (stack_b)
+				else if (*stack_b)
 					rb(stack_b);
 			}
 		}
@@ -176,7 +173,7 @@ void	algo_step_2(t_data	**stack_a, t_data	**stack_b)
 			while (button_value == (*stack_a)->index - 1)
 			{
 				rra(stack_a);
-				button_value = get_big_value(stack_a);
+				button_value = get_button_value(stack_a);
 			}
 		}
 		if (stack_sorted(stack_a) == 1 && *stack_b == NULL)

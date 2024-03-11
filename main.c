@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 12:54:33 by youbihi           #+#    #+#             */
-/*   Updated: 2024/02/26 15:54:32 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/03/10 12:47:22 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	check_if_sorted(t_data	**head)
 	}
 	exit(1);
 }
+
 
 int	main(int argc, char **argv)
 {

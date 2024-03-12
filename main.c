@@ -26,9 +26,29 @@ void	check_if_sorted(t_data	**head)
 	exit(1);
 }
 
+void free_list(t_data **head)
+{
+    t_data *current = *head;
+    t_data *next;
+
+    while (current != NULL)
+    {
+        next = current->next;
+        free(current);
+        current = next;
+    }
+
+    *head = NULL; // Set the head pointer to NULL after freeing all nodes
+}
+
+void s()
+{
+	system("leaks push_swap");
+}
 
 int	main(int argc, char **argv)
 {
+	atexit(s);
 	t_data	*stack_a;
 	t_data	*stack_b;
 	int		list_size;
@@ -50,6 +70,8 @@ int	main(int argc, char **argv)
 			main_algo(&stack_a, &stack_b);
 		
 	}
+	else if (argc == 1)
+		return (0);
 	else
 		ft_printf("Error\n");
 }

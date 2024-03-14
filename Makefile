@@ -10,6 +10,8 @@ SRCF = main.c \
 		libft/ft_atoi.c \
 		parcing/parcing.c \
 		parcing/parcing_utils.c \
+		parcing/parcing_utils_2.c \
+		parcing/check_space.c \
 		ft_printf/ft_printf.c \
 		ft_printf/ft_putaddres.c \
 		ft_printf/ft_putchar_c.c \
@@ -23,14 +25,18 @@ SRCF = main.c \
 		moves/moves_part_two.c \
 		moves/moves_last_part.c \
 		sorting/sorting_case_one.c \
-		sorting/main_algo.c
+		sorting/main_algo.c \
+		sorting/main_algo_help_1.c \
+		sorting/main_algo_help2.c \
+		sorting/sorting_case_one_help1.c \
+		sorting/sorting_case_one_help2.c
 
 # Object files
 OBJF = $(SRCF:.c=.o)
 
 # Compiler and flags
 CC = cc
-CFLAGS =
+CFLAGS = -Wall -Werror -Wextra
 
 # Executable
 PUSH_SWAP = push_swap

@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 12:54:33 by youbihi           #+#    #+#             */
-/*   Updated: 2024/03/10 12:47:22 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/03/14 01:31:45 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,29 +26,40 @@ void	check_if_sorted(t_data	**head)
 	exit(1);
 }
 
-void free_list(t_data **head)
+void	free_stack(t_data	*stack)
 {
-    t_data *current = *head;
-    t_data *next;
+	t_data	*temp;
 
-    while (current != NULL)
-    {
-        next = current->next;
-        free(current);
-        current = next;
-    }
-
-    *head = NULL; // Set the head pointer to NULL after freeing all nodes
+	temp = stack;
+	while (stack != NULL)
+	{
+		temp = stack;
+		stack = stack->next;
+		free(temp);
+	}
 }
 
-void s()
+void	low_numbers(t_data *stack_a, t_data *stack_b, int list_size)
 {
-	system("leaks push_swap");
+	if (list_size == 2)
+	{
+		sort_2(&stack_a);
+		free_stack(stack_a);
+	}
+	else if (list_size == 3)
+	{
+		sort_3(&stack_a);
+		free_stack(stack_a);
+	}
+	else if (list_size == 5 || list_size == 4)
+	{
+		sort_four_and_five(&stack_a, &stack_b, list_size);
+		free_stack(stack_a);
+	}
 }
 
 int	main(int argc, char **argv)
 {
-	atexit(s);
 	t_data	*stack_a;
 	t_data	*stack_b;
 	int		list_size;
@@ -60,15 +71,13 @@ int	main(int argc, char **argv)
 		stack_b = NULL;
 		parsing_data(argv, argc, &stack_a, &list_size);
 		check_if_sorted(&stack_a);
-		if (list_size == 2)
-			sort_2(&stack_a);
-		else if (list_size == 3)
-			sort_3(&stack_a);
-		else if (list_size == 5 || list_size == 4)
-			sort_four_and_five(&stack_a, &stack_b, list_size);
+		if (list_size >= 2 && list_size <= 5)
+			low_numbers(stack_a, stack_b, list_size);
 		else
+		{
 			main_algo(&stack_a, &stack_b);
-		
+			free_stack(stack_a);
+		}
 	}
 	else if (argc == 1)
 		return (0);

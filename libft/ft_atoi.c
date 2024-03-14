@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 17:13:17 by youbihi           #+#    #+#             */
-/*   Updated: 2024/02/17 17:52:26 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/03/13 22:22:34 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static int	func0(const char	*s, int i, int neg)
 		}
 		res = (res * 10) + (s[i++] - '0');
 	}
-	if (res >= LLONG_MAX) 
+	if (res >= LLONG_MAX)
 	{
 		if (neg == -1)
 			return (0);

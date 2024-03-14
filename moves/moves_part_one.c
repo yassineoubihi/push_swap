@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 10:24:45 by youbihi           #+#    #+#             */
-/*   Updated: 2024/02/26 16:41:05 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/03/13 22:24:14 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 /*sa :Swap the first 2 elements at the top of stack a*/
 void	sa(t_data	**stack_a)
 {
-	t_data *first;
-	t_data *second;
+	t_data	*first;
+	t_data	*second;
 
-    if (*stack_a != NULL && (*stack_a)->next != NULL)
+	if (*stack_a != NULL && (*stack_a)->next != NULL)
 	{
 		first = *stack_a;
 		second = (*stack_a)->next;
@@ -26,14 +26,14 @@ void	sa(t_data	**stack_a)
 		second->next = first;
 		*stack_a = second;
 		ft_printf("sa\n");
-    }
+	}
 }
 
 /*sb : Swap the first 2 elements at the top of stack b.*/
 void	sb(t_data	**stack_b)
 {
-	t_data *first;
-	t_data *second;
+	t_data	*first;
+	t_data	*second;
 
 	if (*stack_b != NULL && (*stack_b)->next != NULL)
 	{
@@ -54,7 +54,8 @@ void	ss(t_data	**stack_a, t_data	**stack_b)
 	ft_printf("ss\n");
 }
 
-/*pa : Take the first element at the top of b and put it at the top of a. Do nothing if b is empty*/
+/*pa : Take the first element at the top of b and put it at the top of a.
+	Do nothing if b is empty*/
 void	pa(t_data	**stack_a, t_data	**stack_b)
 {
 	t_data	*temp;
@@ -69,7 +70,8 @@ void	pa(t_data	**stack_a, t_data	**stack_b)
 	}
 }
 
-/*pb : Take the first element at the top of a and put it at the top of b. Do nothing if a is empty.*/
+/*pb :Take the first element at the top of a and put it at the top of b.
+	Do nothing if a is empty.*/
 void	pb(t_data	**stack_a, t_data	**stack_b)
 {
 	t_data	*temp;

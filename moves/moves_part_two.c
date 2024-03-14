@@ -6,13 +6,14 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 00:46:16 by youbihi           #+#    #+#             */
-/*   Updated: 2024/02/26 16:49:52 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/03/13 22:26:26 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-/*ra : Shift up all elements of stack a by 1. The first element becomes the last one.*/
+/*ra : Shift up all elements of stack a by 1.
+	The first element becomes the last one.*/
 void	ra(t_data	**stack_a)
 {
 	t_data	*temp;
@@ -28,7 +29,8 @@ void	ra(t_data	**stack_a)
 	ft_printf("ra\n");
 }
 
-/*rb : Shift up all elements of stack b by 1.The first element becomes the last one */
+/*rb : Shift up all elements of stack b by 1.
+	The first element becomes the last one */
 void	rb(t_data	**stack_b)
 {
 	t_data	*temp;
@@ -52,7 +54,8 @@ void	rr(t_data	**stack_a, t_data	**stack_b)
 	ft_printf("rr\n");
 }
 
-/*rra : Shift down all elements of stack a by 1. The last element becomes the first one.*/
+/*rra : Shift down all elements of stack a by 1.
+	The last element becomes the first one.*/
 void	rra(t_data	**stack_a)
 {
 	t_data	*temp;
@@ -74,7 +77,8 @@ void	rra(t_data	**stack_a)
 	}
 }
 
-/*rrb : Shift down all elements of stack b by 1. The last element becomes the first one.*/
+/*rrb : Shift down all elements of stack b by 1.
+	The last element becomes the first one.*/
 void	rrb(t_data	**stack_b)
 {
 	t_data	*temp;

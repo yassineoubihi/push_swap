@@ -6,13 +6,29 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 17:13:17 by youbihi           #+#    #+#             */
-/*   Updated: 2024/03/13 22:22:34 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/03/15 20:58:16 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include "../push_swap.h"
 #include <stdio.h>
+
+void	check_s(const char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		i++;
+	}
+	if (i > 10)
+	{
+		ft_printf("Error\n");
+		exit (1);
+	}
+}
 
 static int	func(char c)
 {
@@ -55,6 +71,7 @@ int	ft_atoi(const char *s)
 
 	i = 0;
 	neg = 1;
+	check_s(s);
 	while (s[i] && (s[i] == ' ' || func(s[i])))
 		i++;
 	if (s[i] == '+' || s[i] == '-')

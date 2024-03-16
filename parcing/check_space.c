@@ -6,9 +6,11 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 22:27:38 by youbihi           #+#    #+#             */
-/*   Updated: 2024/03/13 22:27:42 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/03/15 20:32:11 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../push_swap.h"
 
 int	check_space(char *str)
 {

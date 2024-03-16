@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 14:57:15 by youbihi           #+#    #+#             */
-/*   Updated: 2024/03/13 22:42:28 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/03/15 20:14:27 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,19 @@ int	check_int_max(char **str_split)
 	return (0);
 }
 
+t_data	*allocate_t_data(void)
+{
+	t_data	*temp_node;
+
+	temp_node = (t_data *)malloc(sizeof(t_data));
+	if (temp_node == NULL)
+	{
+		ft_printf("Memory allocation failed");
+		exit(0);
+	}
+	return (temp_node);
+}
+
 void	fill_data_with_space(char *str, t_data **head, int *num)
 {
 	t_fill_stuct	my_data;
@@ -43,7 +56,7 @@ void	fill_data_with_space(char *str, t_data **head, int *num)
 	*num = my_data.i;
 	while (--my_data.i >= 0)
 	{
-		my_data.new_node = (t_data *)malloc(sizeof(t_data));
+		my_data.new_node = allocate_t_data();
 		my_data.new_node->num = ft_atoi(my_data.str_split[my_data.i]);
 		my_data.new_node->next = NULL;
 		if (!(*head))

@@ -31,17 +31,13 @@ SRCF = main.c \
 		sorting/sorting_case_one_help1.c \
 		sorting/sorting_case_one_help2.c
 
-# Object files
 OBJF = $(SRCF:.c=.o)
 
-# Compiler and flags
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
 
-# Executable
 PUSH_SWAP = push_swap
 
-# Targets
 all: $(PUSH_SWAP)
 
 $(PUSH_SWAP): $(OBJF)

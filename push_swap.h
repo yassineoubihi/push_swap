@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:10:35 by youbihi           #+#    #+#             */
-/*   Updated: 2024/03/15 21:43:33 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/03/21 01:06:03 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,12 @@ typedef struct algo
 	int	flag;
 }	t_algo_first;
 
+typedef struct atoi_arg
+{
+	long				res;
+	int					digitnbr;
+}	t_atoi_vars;
+
 void	free_str(char **str_split);
 void	exit_error(char **str_split);
 void	set_position(t_data **head);
@@ -85,7 +91,7 @@ size_t	ft_strlen(const char *s);
 void	ft_putaddres(void *str, int *b);
 void	ft_puthex(unsigned int str, int *b);
 void	ft_puthex_upp(unsigned int str, int *b);
-int		ft_atoi(const char *s);
+long	ft_atoi(const char *s);
 int		ft_strsearch(char *s, char c);
 int		ft_strcmp(char *s1, char *s2);
 void	fill_data(char *str, t_data **my_data, int *num);

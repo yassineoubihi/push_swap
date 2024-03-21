@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 17:13:17 by youbihi           #+#    #+#             */
-/*   Updated: 2024/03/15 20:58:16 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/03/21 01:30:22 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,21 @@
 #include "../push_swap.h"
 #include <stdio.h>
 
-void	check_s(const char *s)
+void	check_atoi(long res, int neg, const char	*s)
 {
 	int	i;
 
 	i = 0;
 	while (s[i])
-	{
 		i++;
-	}
-	if (i > 10)
+	if (i > 12)
 	{
-		ft_printf("Error\n");
+		ft_printf("Error");
+		exit (1);
+	}
+	if (res * neg > INT_MAX || res * neg < INT_MIN)
+	{
+		ft_printf("Error");
 		exit (1);
 	}
 }
@@ -35,43 +38,42 @@ static int	func(char c)
 	return (c == '\t' || c == '\n' || c == '\v' || c == '\r' || c == '\f');
 }
 
-static int	func0(const char	*s, int i, int neg)
+static long	func0(const char	*s, int i, int neg)
 {
-	unsigned long long	res;
-	int					digitnbr;
+	t_atoi_vars	vars;
 
-	res = 0;
-	digitnbr = 0;
+	vars.res = 0;
+	vars.digitnbr = 0;
 	while (s[i] && s[i] >= '0' && s[i] <= '9')
 	{
-		digitnbr++;
-		if (digitnbr == 20)
+		vars.digitnbr++;
+		if (vars.digitnbr == 20)
 		{
 			if (neg == -1)
 				return (0);
 			else
 				return (-1);
 		}
-		res = (res * 10) + (s[i++] - '0');
+		vars.res = (vars.res * 10) + (s[i++] - '0');
 	}
-	if (res >= LLONG_MAX)
+	if (vars.res >= LLONG_MAX)
 	{
 		if (neg == -1)
 			return (0);
 		else
 			return (-1);
 	}
-	return (((int) res) * neg);
+	check_atoi(vars.res, neg, s);
+	return (((long) vars.res) * neg);
 }
 
-int	ft_atoi(const char *s)
+long	ft_atoi(const char *s)
 {
 	int	i;
 	int	neg;
 
 	i = 0;
 	neg = 1;
-	check_s(s);
 	while (s[i] && (s[i] == ' ' || func(s[i])))
 		i++;
 	if (s[i] == '+' || s[i] == '-')

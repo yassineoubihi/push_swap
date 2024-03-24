@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 00:41:22 by youbihi           #+#    #+#             */
-/*   Updated: 2024/03/14 01:31:15 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/03/24 16:52:23 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,29 @@ void	sort_2(t_data	**stack_a)
 
 void	sort_3(t_data	**stack_a)
 {
-	if (check_1(stack_a) == 0)
-		return ;
-	if ((*stack_a)->num < ((*stack_a)->next)->num && \
-		((*stack_a)->next)->num < (((*stack_a)->next)->next)->num)
-		return ;
-	else if ((*stack_a)->num < ((*stack_a)->next)->num && \
-		((*stack_a)->next)->num > (((*stack_a)->next)->next)->num)
+	if ((*stack_a)->index > ((*stack_a)->next)->index && \
+		((*stack_a)->next)->index < (((*stack_a)->next)->next)->index && \
+		(*stack_a)->index < (((*stack_a)->next)->next)->index)
+		sa(stack_a);
+	else if ((*stack_a)->index > ((*stack_a)->next)->index && \
+	((*stack_a)->next)->index > (((*stack_a)->next)->next)->index && \
+	(*stack_a)->index > (((*stack_a)->next)->next)->index)
+	{
+		sa(stack_a);
+		rra(stack_a);
+	}
+	else if ((*stack_a)->index > ((*stack_a)->next)->index && \
+	((*stack_a)->next)->index < (((*stack_a)->next)->next)->index && \
+	(*stack_a)->index > (((*stack_a)->next)->next)->index)
+		ra(stack_a);
+	else if ((*stack_a)->index < ((*stack_a)->next)->index && \
+	((*stack_a)->next)->index > (((*stack_a)->next)->next)->index && \
+	(*stack_a)->index < (((*stack_a)->next)->next)->index)
 	{
 		sa(stack_a);
 		ra(stack_a);
 	}
-	else if (((*stack_a)->num < ((*stack_a)->next)->num) && \
-		(((*stack_a)->next)->num > (((*stack_a)->next)->next)->num) && \
-		((*stack_a)->num > (((*stack_a)->next)->next)->num))
+	else
 		rra(stack_a);
 }
 

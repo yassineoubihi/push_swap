@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:15:13 by youbihi           #+#    #+#             */
-/*   Updated: 2024/03/15 20:32:26 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/03/24 14:00:02 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,20 @@ int	check_split(char *str)
 	vars.r = ft_split(str, ' ');
 	while (vars.r[vars.i] != NULL)
 	{
-		if ((vars.r[vars.i][0] == '\0' || \
-		((vars.r[vars.i][0] < '0' && vars.r[vars.i][0] > 9) &&
-			vars.r[vars.i][0] != '-' && vars.r[vars.i][0] != '+')) ||
-			(ft_isdigit(vars.r[vars.i][0]) == 0 && vars.r[vars.i][1] == '\0'))
-			return (0);
-		while (vars.r[vars.i][vars.b])
+		if (check_case_one(vars) == 0)
 		{
-			if (ft_isdigit(vars.r[vars.i][vars.b]) != 1)
-				return (0);
-			vars.b++;
+			free_str(vars.r);
+			return (0);
+		}
+		if (check_case_tow(vars) == 0)
+		{
+			free_str(vars.r);
+			return (0);
 		}
 		vars.b = 1;
 		vars.i++;
 	}
+	free_str(vars.r);
 	return (1);
 }
 

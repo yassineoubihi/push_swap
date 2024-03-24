@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 17:13:17 by youbihi           #+#    #+#             */
-/*   Updated: 2024/03/21 01:30:22 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/03/24 15:22:06 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,27 @@
 void	check_atoi(long res, int neg, const char	*s)
 {
 	int	i;
+	int	c;
 
+	c = 0;
 	i = 0;
-	while (s[i])
-		i++;
-	if (i > 12)
+	while (s[i] == '0')
 	{
-		ft_printf("Error");
+		i++;
+	}
+	while (s[i])
+	{
+		i++;
+		c++;
+	}
+	if (c > 12)
+	{
+		ft_printf("Error\n");
 		exit (1);
 	}
 	if (res * neg > INT_MAX || res * neg < INT_MIN)
 	{
-		ft_printf("Error");
+		ft_printf("Error\n");
 		exit (1);
 	}
 }

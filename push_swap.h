@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:10:35 by youbihi           #+#    #+#             */
-/*   Updated: 2024/03/21 01:06:03 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/03/24 13:59:34 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,5 +128,7 @@ void	algo_step_1(t_data	**stack_a, t_data	**stack_b);
 int		get_position(int index, t_data	**stack_b);
 int		stack_sorted(t_data	**stack_a);
 void	main_algo(t_data	**stack_a, t_data	**stack_b);
+int		check_case_one(t_vars_c vars);
+int		check_case_tow(t_vars_c vars);
 
 #endif

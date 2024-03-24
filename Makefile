@@ -12,6 +12,7 @@ SRCF = main.c \
 		parcing/parcing_utils.c \
 		parcing/parcing_utils_2.c \
 		parcing/check_space.c \
+		parcing/parcing_split_helper.c \
 		ft_printf/ft_printf.c \
 		ft_printf/ft_putaddres.c \
 		ft_printf/ft_putchar_c.c \

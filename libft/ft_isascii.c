@@ -6,11 +6,10 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:04:56 by youbihi           #+#    #+#             */
-/*   Updated: 2024/02/08 18:58:49 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/03/26 20:30:02 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "../push_swap.h"
 
 int	ft_isascii(int c)

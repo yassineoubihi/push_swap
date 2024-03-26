@@ -30,7 +30,8 @@ SRCF = main.c \
 		sorting/main_algo_help_1.c \
 		sorting/main_algo_help2.c \
 		sorting/sorting_case_one_help1.c \
-		sorting/sorting_case_one_help2.c
+		sorting/sorting_case_one_help2.c \
+		sorting/sorting_case_one_help.c
 
 OBJF = $(SRCF:.c=.o)
 

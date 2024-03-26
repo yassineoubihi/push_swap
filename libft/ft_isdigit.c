@@ -6,11 +6,10 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 13:51:41 by youbihi           #+#    #+#             */
-/*   Updated: 2024/02/09 09:14:10 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/03/26 21:11:50 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "../push_swap.h"
 
 int	ft_isdigit(int c)

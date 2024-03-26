@@ -6,13 +6,12 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 17:13:17 by youbihi           #+#    #+#             */
-/*   Updated: 2024/03/24 15:22:06 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/03/26 21:11:36 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include "../push_swap.h"
-#include <stdio.h>
 
 void	check_atoi(long res, int neg, const char	*s)
 {

@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 12:54:33 by youbihi           #+#    #+#             */
-/*   Updated: 2024/03/26 00:22:38 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/03/26 20:54:30 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	check_if_sorted(t_data	**head)
 			return ;
 		temp_head = temp_head->next;
 	}
-	exit(1);
+	exit(0);
 }
 
 void	free_stack(t_data	*stack)

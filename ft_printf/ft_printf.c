@@ -6,12 +6,11 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:13:53 by youbihi           #+#    #+#             */
-/*   Updated: 2024/02/09 09:07:55 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/03/26 20:29:58 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-#include <stdio.h>
 
 void	check(const char *str, va_list args, int index, int *c)
 {

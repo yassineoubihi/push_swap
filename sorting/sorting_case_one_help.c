@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 20:04:35 by youbihi           #+#    #+#             */
-/*   Updated: 2024/03/26 20:29:48 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/03/26 21:43:16 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	check_tow_conditions(t_data	**stack_a)
 int	check_worst_case(t_data	**stack_a)
 {
 	if (((*stack_a)->index == 4) && (((*stack_a)->next)->index == 3) && \
-		((((*stack_a)->next)->next)->index == 2) &&\
+		((((*stack_a)->next)->next)->index == 2) && \
 		(((((*stack_a)->next)->next)->next)->index == 1) && \
 		((((((*stack_a)->next)->next)->next)->next)->index == 0))
 		return (1);

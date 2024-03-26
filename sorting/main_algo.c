@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 15:58:17 by youbihi           #+#    #+#             */
-/*   Updated: 2024/03/25 22:45:43 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/03/26 21:43:06 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,4 +83,3 @@ void	main_algo(t_data	**stack_a, t_data	**stack_b)
 	while (get_button_value(stack_a) == (*stack_a)->index - 1)
 		rra(stack_a);
 }
-	

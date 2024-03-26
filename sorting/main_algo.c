@@ -6,24 +6,11 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 15:58:17 by youbihi           #+#    #+#             */
-/*   Updated: 2024/03/21 01:30:30 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/03/25 22:45:43 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-#include <fcntl.h>
-
-void	print_stack(t_data	**stack_a)
-{
-	t_data	*stack ;
-
-	stack = (*stack_a);
-	while (stack)
-	{
-		printf("%d|\n", stack->index);
-		stack = stack->next ;
-	}
-}
 
 void	handel_case(t_data **stack_a, t_data **stack_b,
 	int *button_value, int biggest_value)
@@ -96,3 +83,4 @@ void	main_algo(t_data	**stack_a, t_data	**stack_b)
 	while (get_button_value(stack_a) == (*stack_a)->index - 1)
 		rra(stack_a);
 }
+	

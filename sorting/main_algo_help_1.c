@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 00:55:21 by youbihi           #+#    #+#             */
-/*   Updated: 2024/03/14 00:57:40 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/03/25 22:44:47 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,17 +55,6 @@ int	get_button_value(t_data	**stack)
 		temp = temp->next;
 	}
 	return (buttom);
-}
-
-void	fix_stack(t_data	**stack_b)
-{
-	while (*stack_b)
-	{
-		printf("%p\n",*stack_b);
-		*stack_b = (*stack_b)->next;
-	}
-	*stack_b = NULL;
-	printf("%p\n",*stack_b);
 }
 
 void	update_values(int *lspv, int *pv1, int *pv2, t_data	**stack_a)

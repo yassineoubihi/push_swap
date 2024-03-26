@@ -35,22 +35,23 @@ SRCF = main.c \
 OBJF = $(SRCF:.c=.o)
 
 CC = cc
+
 CFLAGS = -Wall -Werror -Wextra
 
-PUSH_SWAP = push_swap
+NAME = push_swap
 
-all: $(PUSH_SWAP)
+all: $(NAME)
 
-$(PUSH_SWAP): $(OBJF)
-	$(CC) $(CFLAGS) $(OBJF) -o $(PUSH_SWAP)
+$(NAME): $(OBJF)
+	$(CC) $(CFLAGS) $(OBJF) -o $(NAME)
 
-%.o: %.c push_swap.h
+%.o: %.c NAME.h
 	$(CC) -g $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJF)
 
 fclean: clean
-	$(RM) $(PUSH_SWAP)
+	$(RM) $(NAME)
 
 re: fclean all

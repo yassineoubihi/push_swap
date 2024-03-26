@@ -6,14 +6,13 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:10:35 by youbihi           #+#    #+#             */
-/*   Updated: 2024/03/24 13:59:34 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/03/25 22:42:10 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h>
 # include <stdlib.h>
 # include <stdarg.h>
 # include <unistd.h>

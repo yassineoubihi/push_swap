@@ -46,8 +46,8 @@ all: $(NAME)
 $(NAME): $(OBJF)
 	$(CC) $(CFLAGS) $(OBJF) -o $(NAME)
 
-%.o: %.c NAME.h
-	$(CC) -g $(CFLAGS) -c $< -o $@
+%.o: %.c push_swap.h
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJF)

@@ -6,12 +6,36 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 17:13:17 by youbihi           #+#    #+#             */
-/*   Updated: 2024/03/26 21:11:36 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/03/27 15:58:41 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
+#include <stdio.h>
 #include "../push_swap.h"
+
+void	check_len(const char	*s)
+{
+	int	i;
+	int	c;
+
+	c = 0;
+	i = 0;
+	while (s[i] == '0')
+	{
+		i++;
+	}
+	while (s[i])
+	{
+		i++;
+		c++;
+	}
+	if (c > 12)
+	{
+		ft_printf("Error\n");
+		exit (1);
+	}
+}
 
 void	check_atoi(long res, int neg, const char	*s)
 {
@@ -82,6 +106,7 @@ long	ft_atoi(const char *s)
 
 	i = 0;
 	neg = 1;
+	check_len(s);
 	while (s[i] && (s[i] == ' ' || func(s[i])))
 		i++;
 	if (s[i] == '+' || s[i] == '-')

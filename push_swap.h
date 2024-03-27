@@ -6,7 +6,7 @@
 /*   By: youbihi <youbihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:10:35 by youbihi           #+#    #+#             */
-/*   Updated: 2024/03/26 21:50:33 by youbihi          ###   ########.fr       */
+/*   Updated: 2024/03/27 16:00:54 by youbihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ typedef struct s_data
 	int				stack_size;
 	struct s_data	*next;
 }	t_data;
-
 
 typedef struct s_data_index
 {
